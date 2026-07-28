@@ -15,6 +15,56 @@ const NAV = [
 ];
 
 const RESUME_URL = "/Sunil_Devra_Resume.pdf";
+const LINKEDIN_URL = "https://www.linkedin.com/in/sunil-devra-6471b7355/";
+
+/**
+ * Robustly open an external URL, even when the app is embedded in a
+ * sandboxed preview iframe that blocks target="_blank" or popups.
+ * Strategy:
+ *  1. Try window.open in a new tab with noopener,noreferrer.
+ *  2. If popup is blocked/null, try navigating the top-most frame.
+ *  3. If cross-origin blocks that, navigate the current window.
+ */
+export function openExternal(url: string) {
+  try {
+    const win = window.open(url, "_blank", "noopener,noreferrer");
+    if (win) {
+      try { win.opener = null; } catch {}
+      return;
+    }
+  } catch {}
+  try {
+    if (window.top && window.top !== window) {
+      window.top.location.href = url;
+      return;
+    }
+  } catch {}
+  window.location.href = url;
+}
+
+type ExtLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
+export function ExtLink({ href, onClick, children, ...rest }: ExtLinkProps) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={(e) => {
+        // Let modifier-click / middle-click use native behavior.
+        if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || (e as any).button === 1) {
+          onClick?.(e);
+          return;
+        }
+        e.preventDefault();
+        onClick?.(e);
+        openExternal(href);
+      }}
+      {...rest}
+    >
+      {children}
+    </a>
+  );
+}
 
 const CERTS = [
   { title: "Oracle Certified Foundations Associate — Agentic AI", issuer: "Oracle", date: "2026", img: "/certs/oracle-foundations-agentic-ai.png" },
@@ -183,7 +233,7 @@ function Hero() {
 
         <div className="reveal mt-10 flex items-center gap-6 mono text-xs text-muted-foreground">
           <a href="https://github.com/sunildevra754-cell" target="_blank" rel="noopener noreferrer" className="gold-underline hover:text-foreground">GitHub</a>
-          <a href="https://www.linkedin.com/in/sunil-devra-6471b7355" target="_blank" rel="noopener noreferrer" className="gold-underline hover:text-foreground">LinkedIn</a>
+          <ExtLink href={LINKEDIN_URL} className="gold-underline hover:text-foreground">LinkedIn</ExtLink>
           <a href="mailto:sunildevra26@gmail.com" className="gold-underline hover:text-foreground">Email</a>
         </div>
       </div>
@@ -466,10 +516,10 @@ function Contact() {
               <div className="comment">// github</div>
               <div className="mt-1 group-hover:text-gold transition-colors">sunildevra754-cell</div>
             </a>
-            <a href="https://www.linkedin.com/in/sunil-devra-6471b7355" target="_blank" rel="noopener noreferrer" className="group border p-5 hover:border-gold transition-colors" style={{ borderColor: "var(--hairline)" }}>
+            <ExtLink href={LINKEDIN_URL} className="group border p-5 hover:border-gold transition-colors" style={{ borderColor: "var(--hairline)" }}>
               <div className="comment">// linkedin</div>
               <div className="mt-1 group-hover:text-gold transition-colors">sunil-devra-6471b7355</div>
-            </a>
+            </ExtLink>
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-between gap-4 pt-6 border-t" style={{ borderColor: "var(--hairline)" }}>

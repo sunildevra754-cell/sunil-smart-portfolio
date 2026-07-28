@@ -233,7 +233,7 @@ function Hero() {
 
         <div className="reveal mt-10 flex items-center gap-6 mono text-xs text-muted-foreground">
           <a href="https://github.com/sunildevra754-cell" target="_blank" rel="noopener noreferrer" className="gold-underline hover:text-foreground">GitHub</a>
-          <a href="https://www.linkedin.com/in/sunil-devra-6471b7355" target="_blank" rel="noopener noreferrer" className="gold-underline hover:text-foreground">LinkedIn</a>
+          <ExtLink href={LINKEDIN_URL} className="gold-underline hover:text-foreground">LinkedIn</ExtLink>
           <a href="mailto:sunildevra26@gmail.com" className="gold-underline hover:text-foreground">Email</a>
         </div>
       </div>

@@ -14,8 +14,8 @@ const NAV = [
   { id: "contact", label: "Contact", num: "06" },
 ];
 
-const RESUME_URL = "/Sunil_Devra_Resume.pdf";
-const LINKEDIN_URL = "https://www.linkedin.com/in/sunil-devra-6471b7355/";
+const RESUME_URL = "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Sunil_Devra_Resume.pdf";
+const LINKEDIN_URL = "https://www.linkedin.com/in/sunil-devra-6471b7355";
 
 /**
  * Robustly open an external URL, even when the app is embedded in a

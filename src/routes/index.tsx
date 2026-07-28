@@ -339,7 +339,7 @@ function Experience() {
     {
       role: "Full-Stack AI Developer",
       org: "Personal Projects & Hackathons",
-      period: "2024 — Present",
+      period: "2025 — Present",
       points: [
         "Built and deployed Smart Farmer One Touch, live at smart-farmer-connect.base44.app",
         "Solved 100+ competitive programming problems in C++ and Python",

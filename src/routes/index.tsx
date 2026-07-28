@@ -103,7 +103,7 @@ function Nav({ active }: { active: string }) {
         <a
           href={RESUME_URL}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="mono text-xs px-3 py-2 border border-gold text-gold hover:bg-gold hover:text-accent-foreground transition-colors"
         >
           Resume ↗
@@ -167,7 +167,7 @@ function Hero() {
           <a
             href={RESUME_URL}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="mono text-sm px-5 py-3 bg-gold text-accent-foreground hover:bg-transparent hover:text-gold border border-gold transition-colors"
           >
             View Resume ↗
@@ -182,8 +182,8 @@ function Hero() {
         </div>
 
         <div className="reveal mt-10 flex items-center gap-6 mono text-xs text-muted-foreground">
-          <a href="https://github.com/sunildevra754-cell" target="_blank" rel="noreferrer" className="gold-underline hover:text-foreground">GitHub</a>
-          <a href="https://www.linkedin.com/in/sunil-devra-6471b7355" target="_blank" rel="noreferrer" className="gold-underline hover:text-foreground">LinkedIn</a>
+          <a href="https://github.com/sunildevra754-cell" target="_blank" rel="noopener noreferrer" className="gold-underline hover:text-foreground">GitHub</a>
+          <a href="https://www.linkedin.com/in/sunil-devra-6471b7355" target="_blank" rel="noopener noreferrer" className="gold-underline hover:text-foreground">LinkedIn</a>
           <a href="mailto:sunildevra26@gmail.com" className="gold-underline hover:text-foreground">Email</a>
         </div>
       </div>
@@ -297,7 +297,7 @@ function Project() {
             <a
               href="https://smart-farmer-connect.base44.app"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="mono text-xs text-gold gold-underline"
             >
               Open ↗
@@ -323,7 +323,7 @@ function Project() {
           <a
             href="https://smart-farmer-connect.base44.app"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="mono text-sm px-5 py-3 border border-gold text-gold hover:bg-gold hover:text-accent-foreground transition-colors"
           >
             Open Live App ↗
@@ -425,7 +425,7 @@ function Certifications({ onOpen }: { onOpen: (i: number) => void }) {
                   <a
                     href={c.verify}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="inline-block mt-2 mono text-xs text-gold gold-underline"
                   >
                     Verify ↗
@@ -462,11 +462,11 @@ function Contact() {
               <div className="comment">// phone</div>
               <div className="mt-1 group-hover:text-gold transition-colors">+91 95214 49675</div>
             </a>
-            <a href="https://github.com/sunildevra754-cell" target="_blank" rel="noreferrer" className="group border p-5 hover:border-gold transition-colors" style={{ borderColor: "var(--hairline)" }}>
+            <a href="https://github.com/sunildevra754-cell" target="_blank" rel="noopener noreferrer" className="group border p-5 hover:border-gold transition-colors" style={{ borderColor: "var(--hairline)" }}>
               <div className="comment">// github</div>
               <div className="mt-1 group-hover:text-gold transition-colors">sunildevra754-cell</div>
             </a>
-            <a href="https://www.linkedin.com/in/sunil-devra-6471b7355" target="_blank" rel="noreferrer" className="group border p-5 hover:border-gold transition-colors" style={{ borderColor: "var(--hairline)" }}>
+            <a href="https://www.linkedin.com/in/sunil-devra-6471b7355" target="_blank" rel="noopener noreferrer" className="group border p-5 hover:border-gold transition-colors" style={{ borderColor: "var(--hairline)" }}>
               <div className="comment">// linkedin</div>
               <div className="mt-1 group-hover:text-gold transition-colors">sunil-devra-6471b7355</div>
             </a>
@@ -477,7 +477,7 @@ function Contact() {
             <a
               href={RESUME_URL}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="mono text-sm px-5 py-3 bg-gold text-accent-foreground hover:bg-transparent hover:text-gold border border-gold transition-colors"
             >
               Download Resume ↗
@@ -603,7 +603,7 @@ function Lightbox({
               <a
                 href={c.verify}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="mono text-sm px-3 py-1.5 border border-gold text-gold hover:bg-gold hover:text-accent-foreground transition-colors"
                 aria-label={`Verify ${c.title} (opens in new tab)`}
               >

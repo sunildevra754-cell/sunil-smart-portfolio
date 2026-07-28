@@ -516,10 +516,10 @@ function Contact() {
               <div className="comment">// github</div>
               <div className="mt-1 group-hover:text-gold transition-colors">sunildevra754-cell</div>
             </a>
-            <a href="https://www.linkedin.com/in/sunil-devra-6471b7355" target="_blank" rel="noopener noreferrer" className="group border p-5 hover:border-gold transition-colors" style={{ borderColor: "var(--hairline)" }}>
+            <ExtLink href={LINKEDIN_URL} className="group border p-5 hover:border-gold transition-colors" style={{ borderColor: "var(--hairline)" }}>
               <div className="comment">// linkedin</div>
               <div className="mt-1 group-hover:text-gold transition-colors">sunil-devra-6471b7355</div>
-            </a>
+            </ExtLink>
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-between gap-4 pt-6 border-t" style={{ borderColor: "var(--hairline)" }}>

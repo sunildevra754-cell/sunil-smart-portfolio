@@ -654,7 +654,7 @@ function Index() {
         <Certifications onOpen={(i) => setLightbox(i)} />
         <Contact />
       </main>
-      <Lightbox index={lightbox} onClose={() => setLightbox(null)} />
+      <Lightbox index={lightbox} onClose={() => setLightbox(null)} onNavigate={(i) => setLightbox(i)} />
     </div>
   );
 }

@@ -491,21 +491,73 @@ function Contact() {
   );
 }
 
-function Lightbox({ index, onClose }: { index: number | null; onClose: () => void }) {
+function Lightbox({
+  index,
+  onClose,
+  onNavigate,
+}: {
+  index: number | null;
+  onClose: () => void;
+  onNavigate: (i: number) => void;
+}) {
   const dialogRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const titleId = "cert-lightbox-title";
+  const descId = "cert-lightbox-desc";
+
   useEffect(() => {
     if (index === null) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    const total = CERTS.length;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        onNavigate((index + 1) % total);
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        onNavigate((index - 1 + total) % total);
+      } else if (e.key === "Home") {
+        e.preventDefault();
+        onNavigate(0);
+      } else if (e.key === "End") {
+        e.preventDefault();
+        onNavigate(total - 1);
+      } else if (e.key === "Tab") {
+        // simple focus trap within the dialog
+        const root = dialogRef.current;
+        if (!root) return;
+        const focusables = root.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        );
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
+    closeRef.current?.focus();
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
-  }, [index, onClose]);
+  }, [index, onClose, onNavigate]);
 
   if (index === null) return null;
+  const total = CERTS.length;
   const c = CERTS[index];
+  const prev = () => onNavigate((index - 1 + total) % total);
+  const next = () => onNavigate((index + 1) % total);
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-6"
@@ -513,26 +565,71 @@ function Lightbox({ index, onClose }: { index: number | null; onClose: () => voi
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label={c.title}
+      aria-labelledby={titleId}
+      aria-describedby={descId}
     >
-      <div ref={dialogRef} className="relative max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
-        <div className="flex items-center justify-between mb-3">
-          <p className="mono text-sm text-gold">{c.title}</p>
-          <button
-            type="button"
-            onClick={onClose}
-            className="mono text-sm px-3 py-1.5 border border-gold text-gold hover:bg-gold hover:text-accent-foreground transition-colors"
-            aria-label="Close"
-          >
-            Close ✕
-          </button>
+      <div
+        ref={dialogRef}
+        className="relative max-w-5xl w-full"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center justify-between mb-3 gap-3">
+          <div className="min-w-0">
+            <p id={titleId} className="mono text-sm text-gold truncate">{c.title}</p>
+            <p id={descId} className="mono text-xs text-muted-foreground truncate">
+              {c.issuer} · {c.date} · {index + 1} / {total}
+            </p>
+          </div>
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              type="button"
+              onClick={prev}
+              className="mono text-sm px-3 py-1.5 border border-hairline text-foreground hover:border-gold hover:text-gold transition-colors"
+              style={{ borderColor: "var(--hairline)" }}
+              aria-label="Previous certificate"
+            >
+              ← Prev
+            </button>
+            <button
+              type="button"
+              onClick={next}
+              className="mono text-sm px-3 py-1.5 border border-hairline text-foreground hover:border-gold hover:text-gold transition-colors"
+              style={{ borderColor: "var(--hairline)" }}
+              aria-label="Next certificate"
+            >
+              Next →
+            </button>
+            {c.verify && (
+              <a
+                href={c.verify}
+                target="_blank"
+                rel="noreferrer"
+                className="mono text-sm px-3 py-1.5 border border-gold text-gold hover:bg-gold hover:text-accent-foreground transition-colors"
+                aria-label={`Verify ${c.title} (opens in new tab)`}
+              >
+                Verify ↗
+              </a>
+            )}
+            <button
+              ref={closeRef}
+              type="button"
+              onClick={onClose}
+              className="mono text-sm px-3 py-1.5 border border-gold text-gold hover:bg-gold hover:text-accent-foreground transition-colors"
+              aria-label="Close certificate viewer"
+            >
+              Close ✕
+            </button>
+          </div>
         </div>
         <img
           src={c.img}
-          alt={c.title}
+          alt={`${c.title} — issued by ${c.issuer}, ${c.date}`}
           className="w-full max-h-[80vh] object-contain border"
           style={{ borderColor: "var(--hairline)", background: "var(--surface)" }}
         />
+        <p className="sr-only" aria-live="polite">
+          Showing certificate {index + 1} of {total}: {c.title}
+        </p>
       </div>
     </div>
   );

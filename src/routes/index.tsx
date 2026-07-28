@@ -14,8 +14,8 @@ const NAV = [
   { id: "contact", label: "Contact", num: "06" },
 ];
 
-const RESUME_URL = "/Sunil_Devra_Resume.pdf";
-const LINKEDIN_URL = "https://www.linkedin.com/in/sunil-devra-6471b7355/";
+const RESUME_URL = "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Sunil_Devra_Resume.pdf";
+const LINKEDIN_URL = "https://www.linkedin.com/in/sunil-devra-6471b7355";
 
 /**
  * Robustly open an external URL, even when the app is embedded in a
@@ -67,12 +67,12 @@ export function ExtLink({ href, onClick, children, ...rest }: ExtLinkProps) {
 }
 
 const CERTS = [
-  { title: "Oracle Certified Foundations Associate — Agentic AI", issuer: "Oracle", date: "2026", img: "/certs/oracle-foundations-agentic-ai.png" },
-  { title: "Oracle Certified Professional — OCI 2025 Generative AI", issuer: "Oracle", date: "Oct 2025 · valid till Oct 2027", img: "/certs/oracle-professional-oci-genai.png" },
-  { title: "Google AI Essentials Specialization", issuer: "Google · Coursera", date: "May 2026", img: "/certs/google-ai-essentials.png", verify: "https://coursera.org/verify/specialization/MYT68495ZW80" },
-  { title: "Google Prompting Essentials Specialization", issuer: "Google · Coursera", date: "May 2026", img: "/certs/google-prompting-essentials.png", verify: "https://coursera.org/verify/specialization/WCWDI0H8XY7T" },
-  { title: "MERN Stack Internship Completion", issuer: "Webstack Academy", date: "July 2026", img: "/certs/wsa-mern-internship.png" },
-  { title: "Certificate of Excellence — National Cloud Innovation Challenge", issuer: "3SVK, Hyderabad", date: "April 2026", img: "/certs/3svk-cloud-innovation.png" },
+  { title: "Oracle Certified Foundations Associate — Agentic AI", issuer: "Oracle", date: "2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Oracle_Foundations_Associate_AgenticAI.png" },
+  { title: "Oracle Certified Professional — OCI 2025 Generative AI", issuer: "Oracle", date: "Oct 2025 · valid till Oct 2027", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Oracle_Professional_OCI_GenerativeAI.png" },
+  { title: "Google AI Essentials Specialization", issuer: "Google · Coursera", date: "May 2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Google_AI_Essentials_Coursera.png", verify: "https://coursera.org/verify/specialization/MYT68495ZW80" },
+  { title: "Google Prompting Essentials Specialization", issuer: "Google · Coursera", date: "May 2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Google_Prompting_Essentials_Coursera.png", verify: "https://coursera.org/verify/specialization/WCWDI0H8XY7T" },
+  { title: "MERN Stack Internship Completion", issuer: "Webstack Academy", date: "July 2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/WSA_MERN_Internship_Completion.png" },
+  { title: "Certificate of Excellence — National Cloud Innovation Challenge", issuer: "3SVK, Hyderabad", date: "April 2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/3SVK_National_Cloud_Innovation_Challenge.png" },
 ];
 
 const SKILL_GROUPS = [

@@ -406,6 +406,15 @@ function Experience() {
         'Built "Food Genie" — an AI food ordering app — as the capstone project',
       ],
     },
+    {
+      role: "AI & Data Science Intern",
+      org: "Data Alcott Systems",
+      period: "Jul 2026 – Aug 2026 (Remote)",
+      points: [
+        "Completed a remote AI & Data Science internship",
+        "Built an AI-powered Registration Assistant chatbot for course registration and eligibility checks.",
+      ],
+    },
   ];
   return (
     <section id="experience" className="px-6 py-24 border-t hairline" style={{ borderColor: "var(--hairline)" }}>

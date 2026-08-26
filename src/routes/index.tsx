@@ -73,6 +73,7 @@ const CERTS = [
   { title: "Google Prompting Essentials Specialization", issuer: "Google · Coursera", date: "May 2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Google_Prompting_Essentials_Coursera.png", verify: "https://coursera.org/verify/specialization/WCWDI0H8XY7T" },
   { title: "MERN Stack Internship Completion", issuer: "Webstack Academy", date: "July 2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/WSA_MERN_Internship_Completion.png" },
   { title: "Certificate of Excellence — National Cloud Innovation Challenge", issuer: "3SVK, Hyderabad", date: "April 2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/3SVK_National_Cloud_Innovation_Challenge.png" },
+  { title: "Certificate of Completion — Data Alcott Systems", issuer: "Data Alcott Systems · Aug 2026", date: "Aug 2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Data_Alcott_Completion_Certificate.png" },
 ];
 
 const SKILL_GROUPS = [

@@ -77,6 +77,15 @@ export const EXPERIENCE = [
       'Built "Food Genie" — an AI food ordering app — as the capstone project',
     ],
   },
+  {
+    role: "AI & Data Science Intern",
+    org: "Data Alcott Systems",
+    period: "Jul 2026 – Aug 2026 (Remote)",
+    points: [
+      "Completed a remote AI & Data Science internship",
+      "Built an AI-powered Registration Assistant chatbot for course registration and eligibility checks.",
+    ],
+  },
 ];
 
 export const FEATURED_PROJECT = {

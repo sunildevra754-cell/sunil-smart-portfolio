@@ -164,4 +164,11 @@ export const CERTIFICATIONS = [
     image:
       "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/3SVK_National_Cloud_Innovation_Challenge.png",
   },
+  {
+    title: "Certificate of Completion — Data Alcott Systems",
+    issuer: "Data Alcott Systems · Aug 2026",
+    date: "Aug 2026",
+    image:
+      "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Data_Alcott_Completion_Certificate.png",
+  },
 ];

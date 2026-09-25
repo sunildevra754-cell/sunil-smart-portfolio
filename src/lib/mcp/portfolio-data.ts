@@ -171,4 +171,11 @@ export const CERTIFICATIONS = [
     image:
       "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Data_Alcott_Completion_Certificate.png",
   },
+  {
+    title: "AI/ML for Geodata Analytics",
+    issuer: "IIRS, ISRO",
+    date: "Aug 2026",
+    image:
+      "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/ISRO_AIML_Geodata_Certificate.png",
+  },
 ];

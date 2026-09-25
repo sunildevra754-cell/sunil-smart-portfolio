@@ -3,6 +3,24 @@ import { useEffect, useRef, useState } from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Sunil Devra — AI/ML Engineer & Full-Stack Developer" },
+      {
+        name: "description",
+        content:
+          "Portfolio of Sunil Devra, an AI/ML engineer and full-stack developer building practical technology for Indian users.",
+      },
+      { property: "og:title", content: "Sunil Devra — AI/ML Engineer & Full-Stack Developer" },
+      {
+        property: "og:description",
+        content:
+          "Explore Sunil Devra's AI, full-stack, agriculture technology, experience, and professional certifications.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
 });
 
 const NAV = [
@@ -74,6 +92,7 @@ const CERTS = [
   { title: "MERN Stack Internship Completion", issuer: "Webstack Academy", date: "July 2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/WSA_MERN_Internship_Completion.png" },
   { title: "Certificate of Excellence — National Cloud Innovation Challenge", issuer: "3SVK, Hyderabad", date: "April 2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/3SVK_National_Cloud_Innovation_Challenge.png" },
   { title: "Certificate of Completion — Data Alcott Systems", issuer: "Data Alcott Systems · Aug 2026", date: "Aug 2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Data_Alcott_Completion_Certificate.png" },
+  { title: "AI/ML for Geodata Analytics", issuer: "IIRS, ISRO", date: "Aug 2026", img: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/ISRO_AIML_Geodata_Certificate.png" },
 ];
 
 const SKILL_GROUPS = [

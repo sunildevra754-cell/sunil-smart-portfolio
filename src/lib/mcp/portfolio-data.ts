@@ -24,7 +24,7 @@ export const CONTACT_LINKS = {
   github: "https://github.com/sunildevra754-cell",
   email: "sunildevra26@gmail.com",
   resume:
-    "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Sunil_Devra_Resume.pdf",
+    "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Sunil_Devra_Resume_2026.pdf",
 };
 
 export const SKILL_GROUPS = [

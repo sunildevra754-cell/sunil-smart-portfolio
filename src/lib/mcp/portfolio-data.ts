@@ -78,12 +78,24 @@ export const EXPERIENCE = [
     ],
   },
   {
+    role: "Frontend Web Developer Intern",
+    org: "YuvaIntern (NSDC / Henry Harvin Education)",
+    period: "Jul 2026 (Remote)",
+    points: [
+      "Converted a design wireframe into a responsive web page using semantic HTML and CSS",
+      "Added JavaScript interactivity and built a single-page application (SPA) simulation across 5 weekly tasks",
+      "Improved site performance and accessibility following web best practices",
+    ],
+  },
+  {
     role: "AI & Data Science Intern",
     org: "Data Alcott Systems",
     period: "Jul 2026 – Aug 2026 (Remote)",
     points: [
-      "Completed a remote AI & Data Science internship",
-      "Built an AI-powered Registration Assistant chatbot for course registration and eligibility checks.",
+      "Built NLP/ML systems in Python, including an AI Career Guidance Assistant (intent classification with NLTK, spaCy, Scikit-learn) and an AI Resume Reviewer that scores skills, experience and education",
+      "Developed an AI Project Topic Recommender using TF-IDF and cosine similarity",
+      "Built an AI-powered Registration Assistant chatbot for course registration and eligibility checks",
+      "Delivered GitHub repositories, demo videos, project reports and technical blog posts",
     ],
   },
 ];
@@ -157,6 +169,24 @@ export const CERTIFICATIONS = [
       "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/WSA_MERN_Internship_Completion.png",
   },
   {
+    title: "Certificate of Completion — Frontend Web Developer Intern",
+    issuer: "YuvaIntern (NSDC)",
+    date: "Jul 2026",
+    image: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/YuvaIntern_Completion_Certificate.png",
+  },
+  {
+    title: "Certificate of Experience — Frontend Web Developer Intern",
+    issuer: "YuvaIntern (Henry Harvin)",
+    date: "Aug 2026",
+    image: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/YuvaIntern_Experience_Certificate.png",
+  },
+  {
+    title: "National Level Project Exhibition 2026 — Certificate of Participation",
+    issuer: "Vivekananda Global University, Jaipur",
+    date: "2026",
+    image: "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/VGU_National_Project_Exhibition_2026.png",
+  },
+  {
     title:
       "Certificate of Excellence — National Cloud Innovation Challenge",
     issuer: "3SVK, Hyderabad",
@@ -166,7 +196,7 @@ export const CERTIFICATIONS = [
   },
   {
     title: "Certificate of Completion — Data Alcott Systems",
-    issuer: "Data Alcott Systems · Aug 2026",
+    issuer: "Data Alcott Systems",
     date: "Aug 2026",
     image:
       "https://raw.githubusercontent.com/sunildevra754-cell/portfolio-assets/main/Data_Alcott_Completion_Certificate.png",
